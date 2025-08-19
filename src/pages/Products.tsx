@@ -1,8 +1,6 @@
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
+import { Card, Badge, Button, Flex, Text, Box } from "@radix-ui/themes";
 import { Heart, Star, Droplets, Apple, Grape } from "lucide-react";
 
 const Products = () => {
@@ -91,47 +89,54 @@ const Products = () => {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {products.map((product, index) => (
-                <Card key={index} className="group hover:shadow-xl transition-all duration-300 relative overflow-hidden">
+                <Card key={index} className="group hover:shadow-xl transition-all duration-300 relative overflow-hidden" size="3">
                   {product.bestseller && (
-                    <Badge className="absolute top-4 right-4 z-10 bg-[hsl(var(--juice-red))] hover:bg-[hsl(var(--juice-red))]">
-                      Bestseller
-                    </Badge>
+                    <Box className="absolute top-4 right-4 z-10">
+                      <Badge color="red" variant="solid">
+                        Bestseller
+                      </Badge>
+                    </Box>
                   )}
                   
-                  <CardHeader className="pb-4">
-                    <div className={`w-16 h-16 rounded-full bg-gradient-to-r ${product.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
-                      <div className="text-white">
-                        {product.icon}
-                      </div>
-                    </div>
-                    <CardTitle className="text-xl font-bold">{product.name}</CardTitle>
-                    <div className="flex items-center justify-between">
-                      <span className="text-2xl font-bold text-primary">{product.price}</span>
-                      <Badge variant="outline" className="text-muted-foreground">
-                        {product.size}
-                      </Badge>
-                    </div>
-                  </CardHeader>
-                  
-                  <CardContent className="space-y-4">
-                    <p className="text-muted-foreground">{product.description}</p>
-                    
-                    <div className="space-y-2">
-                      <h4 className="font-semibold text-sm">Features:</h4>
-                      {product.features.map((feature, featureIndex) => (
-                        <div key={featureIndex} className="flex items-center text-sm">
-                          <div className="w-2 h-2 bg-primary rounded-full mr-3" />
-                          {feature}
+                  <Flex direction="column" gap="4" className="p-6">
+                    <Flex align="center" gap="4">
+                      <Box className={`w-16 h-16 rounded-full bg-gradient-to-r ${product.color} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
+                        <div className="text-white">
+                          {product.icon}
                         </div>
+                      </Box>
+                      <Box className="flex-1">
+                        <Text size="5" weight="bold" className="block mb-2">{product.name}</Text>
+                        <Flex align="center" justify="between">
+                          <Text size="6" weight="bold" color="teal">{product.price}</Text>
+                          <Badge variant="outline" color="gray">
+                            {product.size}
+                          </Badge>
+                        </Flex>
+                      </Box>
+                    </Flex>
+                    
+                    <Text color="gray" className="text-sm">{product.description}</Text>
+                    
+                    <Box>
+                      <Text size="2" weight="bold" className="block mb-2">Features:</Text>
+                      {product.features.map((feature, featureIndex) => (
+                        <Flex key={featureIndex} align="center" gap="3" className="mb-1">
+                          <Box className="w-2 h-2 bg-teal-500 rounded-full" />
+                          <Text size="2">{feature}</Text>
+                        </Flex>
                       ))}
-                    </div>
+                    </Box>
                     
                     <Button 
-                      className="w-full bg-gradient-to-r from-[hsl(var(--juice-orange))] to-[hsl(var(--juice-yellow))] hover:opacity-90 transition-opacity"
+                      className="w-full"
+                      variant="solid"
+                      color="teal"
+                      size="3"
                     >
                       Add to Cart
                     </Button>
-                  </CardContent>
+                  </Flex>
                 </Card>
               ))}
             </div>
@@ -147,17 +152,18 @@ const Products = () => {
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
               Contact us for bulk orders, custom blends, or to learn more about our products.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Flex direction="column" gap="4" align="center" className="sm:flex-row">
               <Button 
-                size="lg" 
-                className="bg-gradient-to-r from-[hsl(var(--juice-orange))] to-[hsl(var(--juice-yellow))] hover:opacity-90 transition-opacity"
+                size="4" 
+                variant="solid"
+                color="teal"
               >
                 Contact Sales
               </Button>
-              <Button variant="outline" size="lg">
+              <Button variant="outline" size="4" color="gray">
                 Download Catalog
               </Button>
-            </div>
+            </Flex>
           </div>
         </section>
       </main>
