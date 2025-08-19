@@ -5,29 +5,56 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { MapPin, Phone, Mail, Clock, MessageSquare, Users, Package } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, MessageSquare, Users, Package, ExternalLink, Heart, Star } from "lucide-react";
 
 const Contact = () => {
   const contactInfo = [
     {
       icon: <MapPin className="w-6 h-6 text-[hsl(var(--juice-green))]" />,
-      title: "Our Location",
-      details: ["123 Fruit Street", "Fresh City, FC 12345", "United States"]
+      title: "Our Location | ที่ตั้งโรงงาน",
+      details: [
+        "88/54 โรงงาน JuicingS โครงการสำเภาทอง",
+        "ต.หน้าไม้, Lat Lum Kaeo, Thailand 12400"
+      ]
     },
     {
       icon: <Phone className="w-6 h-6 text-[hsl(var(--juice-orange))]" />,
-      title: "Phone Numbers",
-      details: ["Sales: +1 (555) 123-4567", "Support: +1 (555) 123-4568", "Fax: +1 (555) 123-4569"]
+      title: "Phone Number | โทรศัพท์",
+      details: ["02 147 3184"]
     },
     {
       icon: <Mail className="w-6 h-6 text-[hsl(var(--juice-red))]" />,
-      title: "Email Addresses",
-      details: ["info@juicings.com", "sales@juicings.com", "support@juicings.com"]
+      title: "Email Address | อีเมล",
+      details: ["operation@juicings.com"]
     },
     {
       icon: <Clock className="w-6 h-6 text-[hsl(var(--accent))]" />,
-      title: "Business Hours",
+      title: "Business Hours | เวลาทำการ",
       details: ["Monday - Friday: 8:00 AM - 6:00 PM", "Saturday: 9:00 AM - 4:00 PM", "Sunday: Closed"]
+    }
+  ];
+
+  const socialMedia = [
+    {
+      platform: "LINE",
+      icon: "💬",
+      title: "LINE Official",
+      link: "https://lin.ee/z1lI91U",
+      description: "ติดต่อเราผ่าน LINE"
+    },
+    {
+      platform: "Facebook",
+      icon: "📘",
+      title: "Facebook Page",
+      link: "https://www.facebook.com/JuicingSession",
+      description: "Follow us on Facebook"
+    },
+    {
+      platform: "LINE Shop",
+      icon: "🛍️",
+      title: "LINE Shop",
+      link: "https://shop.line.me/@juicings",
+      description: "สั่งซื้อผ่าน LINE Shop"
     }
   ];
 
@@ -57,11 +84,17 @@ const Contact = () => {
         <section className="py-20 bg-gradient-to-br from-[hsl(var(--juice-green))] via-[hsl(var(--juice-orange))] to-[hsl(var(--juice-red))] text-white">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Get In Touch
+              Contact Us | ติดต่อเรา
             </h1>
-            <p className="text-xl max-w-3xl mx-auto opacity-90">
-              We would love to hear from you. Contact us for orders, partnerships, 
-              or any questions about our premium fruit juices.
+            <p className="text-xl max-w-3xl mx-auto opacity-90 mb-4">
+              "น้ำผลไม้คั้นสด ทุกหยดจากใจ"
+            </p>
+            <p className="text-lg max-w-3xl mx-auto opacity-80 mb-4">
+              "Freshly squeezed juice — every drop made with heart."
+            </p>
+            <p className="text-base max-w-3xl mx-auto opacity-70">
+              ผลิตเเละจัดจำหน่ายน้ำผลไม้สด ปลีก-ส่ง มาตรฐาน GMP<br/>
+              We manufacture and distribute fresh, high-quality juice. Available for retail and wholesale. GMP certified.
             </p>
           </div>
         </section>
@@ -87,6 +120,107 @@ const Contact = () => {
                   </CardContent>
                 </Card>
               ))}
+            </div>
+          </div>
+
+          {/* Social Media & Stats Section */}
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                Connect With Us | ติดต่อผ่านโซเชียลมีเดีย
+              </h2>
+            </div>
+            
+            <div className="grid md:grid-cols-3 gap-8 mb-16">
+              {socialMedia.map((social, index) => (
+                <Card key={index} className="text-center p-6 hover:shadow-lg transition-all hover:scale-105">
+                  <CardContent className="pt-6">
+                    <div className="text-4xl mb-4">{social.icon}</div>
+                    <h3 className="text-lg font-bold mb-2">{social.title}</h3>
+                    <p className="text-sm text-muted-foreground mb-4">{social.description}</p>
+                    <Button 
+                      asChild 
+                      variant="outline" 
+                      className="w-full"
+                    >
+                      <a href={social.link} target="_blank" rel="noopener noreferrer">
+                        Visit {social.platform} <ExternalLink className="w-4 h-4 ml-2" />
+                      </a>
+                    </Button>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+
+            {/* Company Description */}
+            <Card className="mb-16 p-8 bg-gradient-to-r from-[hsl(var(--juice-green))]/10 to-[hsl(var(--juice-orange))]/10">
+              <CardContent className="p-0">
+                <div className="text-center mb-8">
+                  <Heart className="w-12 h-12 text-[hsl(var(--juice-red))] mx-auto mb-4" />
+                  <h2 className="text-2xl font-bold mb-4">About Juicings | เกี่ยวกับเรา</h2>
+                </div>
+                
+                <div className="grid md:grid-cols-2 gap-8">
+                  <div className="space-y-4">
+                    <h3 className="text-lg font-semibold text-[hsl(var(--juice-green))]">ภาษาไทย</h3>
+                    <p className="text-muted-foreground leading-relaxed">
+                      Juicings เป็นโรงงานผลิต "ขายปลีก และ ขายส่ง" รวมถึง One Stop Services 
+                      ตั้งแต่ผลิต ตรวจเชื้อ ขอ อ.ย ไปจนถึงออกแบบ Packaging โรงงานใส่ใจคุณภาพ
+                      จึงเลือกลงทุนกับเทคโนโลยีในการผลิต และฆ่าเชื้อให้ทันสมัย รวมถึงระบบผลิต
+                      ที่ไม่สัมผัสมือคน เพื่อความปลอดภัยและความสะอาดกับลูกค้าทุกท่าน
+                    </p>
+                  </div>
+                  
+                  <div className="space-y-4">
+                    <h3 className="text-lg font-semibold text-[hsl(var(--juice-orange))]">English</h3>
+                    <p className="text-muted-foreground leading-relaxed">
+                      Juicings is a "retail and wholesale" manufacturing plant, including One Stop Services 
+                      from production, testing, FDA approval, to packaging design. Our factory is committed 
+                      to quality and has invested in state-of-the-art production and sterilization technologies, 
+                      including a hands-free production system to ensure the safety and cleanliness of all customers.
+                    </p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Facebook Stats */}
+            <div className="grid md:grid-cols-3 gap-6 mb-16">
+              <Card className="text-center p-6 bg-blue-50 border-blue-200">
+                <CardContent className="pt-6">
+                  <Star className="w-8 h-8 text-blue-600 mx-auto mb-3" />
+                  <h3 className="font-bold text-lg mb-2">Customer Reviews</h3>
+                  <Button asChild variant="outline" size="sm">
+                    <a href="https://www.facebook.com/JuicingSession/reviews" target="_blank" rel="noopener noreferrer">
+                      View Reviews
+                    </a>
+                  </Button>
+                </CardContent>
+              </Card>
+              
+              <Card className="text-center p-6 bg-green-50 border-green-200">
+                <CardContent className="pt-6">
+                  <Users className="w-8 h-8 text-green-600 mx-auto mb-3" />
+                  <h3 className="font-bold text-lg mb-2">Followers</h3>
+                  <Button asChild variant="outline" size="sm">
+                    <a href="https://www.facebook.com/JuicingSession/followers" target="_blank" rel="noopener noreferrer">
+                      See Followers
+                    </a>
+                  </Button>
+                </CardContent>
+              </Card>
+              
+              <Card className="text-center p-6 bg-orange-50 border-orange-200">
+                <CardContent className="pt-6">
+                  <Heart className="w-8 h-8 text-orange-600 mx-auto mb-3" />
+                  <h3 className="font-bold text-lg mb-2">Likes</h3>
+                  <Button asChild variant="outline" size="sm">
+                    <a href="https://www.facebook.com/JuicingSession/friends_likes" target="_blank" rel="noopener noreferrer">
+                      View Likes
+                    </a>
+                  </Button>
+                </CardContent>
+              </Card>
             </div>
           </div>
         </section>
