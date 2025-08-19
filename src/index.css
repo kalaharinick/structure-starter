@@ -17,17 +17,28 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 120 70% 25%;
+    --primary-foreground: 0 0% 98%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 33 95% 55%;
+    --secondary-foreground: 0 0% 98%;
 
-    --muted: 210 40% 96.1%;
+    --muted: 120 30% 96%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 15 85% 60%;
+    --accent-foreground: 0 0% 98%;
+    
+    /* Juice brand colors */
+    --juice-orange: 33 95% 55%;
+    --juice-green: 120 70% 45%;
+    --juice-red: 15 85% 60%;
+    --juice-yellow: 48 95% 65%;
+    
+    /* Gradients */
+    --gradient-fresh: linear-gradient(135deg, hsl(var(--juice-green)), hsl(var(--juice-orange)));
+    --gradient-citrus: linear-gradient(135deg, hsl(var(--juice-orange)), hsl(var(--juice-yellow)));
+    --gradient-berry: linear-gradient(135deg, hsl(var(--juice-red)), hsl(var(--accent)));
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
@@ -65,17 +76,23 @@ All colors MUST be HSL.
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 210 40% 98%;
+    --primary: 120 70% 45%;
     --primary-foreground: 222.2 47.4% 11.2%;
 
-    --secondary: 217.2 32.6% 17.5%;
+    --secondary: 33 85% 45%;
     --secondary-foreground: 210 40% 98%;
 
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
 
-    --accent: 217.2 32.6% 17.5%;
+    --accent: 15 75% 50%;
     --accent-foreground: 210 40% 98%;
+    
+    /* Dark mode juice colors */
+    --juice-orange: 33 85% 55%;
+    --juice-green: 120 70% 50%;
+    --juice-red: 15 75% 60%;
+    --juice-yellow: 48 85% 65%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
