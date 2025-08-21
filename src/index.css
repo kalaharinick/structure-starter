@@ -35,6 +35,10 @@ All colors MUST be HSL.
     --juice-red: 15 85% 60%;
     --juice-yellow: 48 95% 65%;
     
+    /* Custom section colors */
+    --carousel-bg: 154 35% 91%;
+    --carousel-card: 180 20% 98%;
+    
     /* Gradients */
     --gradient-fresh: linear-gradient(135deg, hsl(var(--juice-green)), hsl(var(--juice-orange)));
     --gradient-citrus: linear-gradient(135deg, hsl(var(--juice-orange)), hsl(var(--juice-yellow)));

@@ -61,7 +61,7 @@ export const ImageCarousel = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-background to-muted/20">
+    <section className="py-20" style={{ backgroundColor: 'hsl(var(--carousel-bg))' }}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-[hsl(var(--juice-green))] via-[hsl(var(--juice-orange))] to-[hsl(var(--juice-red))] bg-clip-text text-transparent">
@@ -78,7 +78,7 @@ export const ImageCarousel = () => {
               {carouselImages.map((image, index) => (
                 <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
                   <div className="p-1">
-                    <div className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300">
+                    <div className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300" style={{ backgroundColor: 'hsl(var(--carousel-card))' }}>
                       <div className="aspect-[4/3] overflow-hidden">
                         <img
                           src={image.src}
