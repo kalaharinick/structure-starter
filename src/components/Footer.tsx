@@ -50,15 +50,15 @@ export const Footer = () => {
             <div className="space-y-2">
               <div className="flex items-center text-sm text-muted-foreground">
                 <Mail className="w-4 h-4 mr-2" />
-                info@juicings.com
+                operation@juicings.com
               </div>
               <div className="flex items-center text-sm text-muted-foreground">
                 <Phone className="w-4 h-4 mr-2" />
-                +1 (555) 123-4567
+                02 147 3184
               </div>
               <div className="flex items-center text-sm text-muted-foreground">
                 <MapPin className="w-4 h-4 mr-2" />
-                123 Fruit Street, Fresh City, FC 12345
+                88/54 โรงงาน JuicingS โครงการสำเภาทอง ต.หน้าไม้, Lat Lum Kaeo, Thailand, 12400
               </div>
             </div>
           </div>
