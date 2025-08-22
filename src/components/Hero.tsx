@@ -64,7 +64,7 @@ export const Hero = () => {
           {featuredProducts.map((product, index) => (
             <Card 
               key={index} 
-              className="group overflow-hidden border-none shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
+              className="group overflow-hidden border-none shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 pb-6"
             >
               <div className={`h-64 bg-gradient-to-br ${product.gradient} relative overflow-hidden`}>
                 <img 
