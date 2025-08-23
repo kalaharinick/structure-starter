@@ -8,21 +8,18 @@ export const ProductShowcase = () => {
       name: "Apple Juice with Honey",
       description: "92% pure apple juice enriched with natural honey for perfect sweetness",
       features: ["No Artificial Colors", "No Preservatives", "Rich in Vitamins"],
-      color: "from-[hsl(var(--juice-yellow))] to-[hsl(var(--juice-orange))]",
       icon: <Heart className="w-5 h-5" />
     },
     {
       name: "100% Tangerine Orange",
       description: "Fresh tangerine juice packed with Vitamin C and natural goodness",
       features: ["100% Natural", "High Vitamin C", "Cold Pressed"],
-      color: "from-[hsl(var(--juice-orange))] to-[hsl(var(--juice-green))]",
       icon: <Star className="w-5 h-5" />
     },
     {
       name: "Cold Pressed Watermelon",
       description: "Refreshing watermelon juice with no added sugars or artificial flavors",
       features: ["Cold Pressed", "No Added Sugar", "Hydrating"],
-      color: "from-[hsl(var(--juice-red))] to-[hsl(var(--accent))]",
       icon: <Droplets className="w-5 h-5" />
     }
   ];
@@ -65,7 +62,7 @@ export const ProductShowcase = () => {
             <Card key={index} className="group hover:shadow-xl transition-all duration-300">
               <CardHeader>
                 <div className="flex items-center justify-between mb-3">
-                  <div className={`p-3 rounded-full bg-gradient-to-r ${product.color}`}>
+                  <div className="p-3 rounded-full bg-primary text-primary-foreground">
                     {product.icon}
                   </div>
                   <Badge variant="secondary" className="bg-[hsl(var(--juice-green))] text-white">
