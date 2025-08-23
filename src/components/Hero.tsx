@@ -1,23 +1,23 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import appleJuiceHero from "@/assets/apple-juice-hero.jpg";
-import orangeJuiceHero from "@/assets/orange-juice-hero.jpg";
-import watermelonJuiceHero from "@/assets/watermelon-juice-hero.jpg";
+import appleProductImage from "@/assets/jucing_sessions_product_apple.jpg";
+import orangeProductImage from "@/assets/jucing_sessions_product_orange.jpg";
+import watermelonProductImage from "@/assets/jucing_sessions_product_watermelon.jpg";
 
 export const Hero = () => {
   const featuredProducts = [
     {
-      image: appleJuiceHero,
+      image: appleProductImage,
       title: "Apple Juice with Honey",
       subtitle: "92% Pure Natural Goodness"
     },
     {
-      image: orangeJuiceHero,
+      image: orangeProductImage,
       title: "100% Tangerine Orange",
       subtitle: "Fresh & Vitamin Rich"
     },
     {
-      image: watermelonJuiceHero,
+      image: watermelonProductImage,
       title: "Cold Pressed Watermelon",
       subtitle: "Refreshing & Natural"
     }
